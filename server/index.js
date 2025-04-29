@@ -15,7 +15,6 @@ const PORT = process.env.PORT || 5000;
 const corsOptions = {
   origin: '*',
   methods: ['GET', 'POST', 'DELETE'],
-  credentials: true
 };
 
 // Middleware

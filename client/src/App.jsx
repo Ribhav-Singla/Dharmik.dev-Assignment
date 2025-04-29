@@ -4,7 +4,7 @@ import NoteForm from './components/NoteForm'
 import NoteList from './components/NoteList'
 import './App.css'
 
-const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000/notes'
+const API_URL = import.meta.env.VITE_BACKEND_URL || 'https://notes-app-server-b0zk.onrender.com/notes'
 
 function App() {
   const [notes, setNotes] = useState([])
