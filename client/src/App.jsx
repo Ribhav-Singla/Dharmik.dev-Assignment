@@ -4,9 +4,11 @@ import NoteForm from './components/NoteForm'
 import NoteList from './components/NoteList'
 import './App.css'
 
-const API_URL = import.meta.env.VITE_BACKEND_URL || 'https://notes-app-server-b0zk.onrender.com/notes'
+const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000/notes'
 
 function App() {
+  console.log('Environment variable:')
+
   const [notes, setNotes] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -14,6 +16,9 @@ function App() {
   const fetchNotes = async () => {
     setLoading(true)
     setError('')
+
+    console.log('Fetching notes from:', API_URL)
+
     try {
       const response = await axios.get(API_URL)
       setNotes(Array.isArray(response.data) ? response.data : [])

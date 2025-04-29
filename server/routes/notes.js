@@ -7,6 +7,7 @@ router.get('/', async (req, res) => {
   try {
     console.log("Fetching notes");
     const notes = await Note.find().sort({ createdAt: -1 });
+    console.log("Notes fetched:", notes);
     res.json(notes);
   } catch (error) {
     res.status(500).json({ message: error.message });
