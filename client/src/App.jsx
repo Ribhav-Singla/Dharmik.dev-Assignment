@@ -4,10 +4,9 @@ import NoteForm from './components/NoteForm'
 import NoteList from './components/NoteList'
 import './App.css'
 
-const API_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000/notes'
+const API_URL = import.meta.env.VITE_BACKEND_URL
 
 function App() {
-  console.log('Environment variable:')
 
   const [notes, setNotes] = useState([])
   const [loading, setLoading] = useState(false)
