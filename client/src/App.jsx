@@ -15,9 +15,6 @@ function App() {
   const fetchNotes = async () => {
     setLoading(true)
     setError('')
-
-    console.log('Fetching notes from:', API_URL)
-
     try {
       const response = await axios.get(API_URL)
       setNotes(Array.isArray(response.data) ? response.data : [])
